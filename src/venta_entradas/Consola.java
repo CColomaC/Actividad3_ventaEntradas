@@ -1,14 +1,15 @@
 package venta_entradas;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Consola {
 	static Scanner scanner = new Scanner(System.in);
-	private ArrayList<Clientes> clientes = new ArrayList<>();
-	private ArrayList<Entradas> entradas = new ArrayList<>();
-	private ArrayList<Ventas> ventas = new ArrayList<>();
-	private ArrayList<Asientos> asientos = new ArrayList<>();
+	private static ArrayList<Clientes> clientes = new ArrayList<Clientes>();
+	private static ArrayList<Entradas> entradas = new ArrayList<Entradas>();
+	private static ArrayList<Ventas> ventas = new ArrayList<Ventas>();
+	private static ArrayList<Asientos> asientos = new ArrayList<Asientos>();
 	
 	// constantes para el menu
 		public final static int OPCION_MENU_COMPRAR_TICKET = 1;
@@ -20,12 +21,22 @@ public class Consola {
 
 	public static void main(String[] args) {
 		
+		inicializar();		
 		menu();
-		//inicializar();
 	}
 
 	private static void inicializar() {
-		System.out.println("No implementado aun");
+
+		for (int i = 1; i <= 30; i++) {
+			System.out.println("Añadido asiento: "+i);
+			Asientos asiento = new Asientos(i);
+			asientos.add(asiento);
+		}
+		for (Asientos asiento : asientos) {
+			Entradas entrada = new Entradas(1000, true, LocalDate.now(), "Peliculon", asiento);
+			System.out.println("Añadida entrada");
+			
+		}
 		
 	}
 
@@ -62,7 +73,7 @@ public class Consola {
 	}
 	
 	private static int opcionMenu() {
-		System.out.println("Punto de venta XXXX:\n"); // "\n" para saltarse una linea
+		System.out.println("SISTEMA ENTRADAS:\n"); // "\n" para saltarse una linea
 		System.out.println("1. COMPRAR TICKET");
 		System.out.println("2. VER VENTAS");
 		System.out.println("3. ENTRADAS DISPONIBLES");

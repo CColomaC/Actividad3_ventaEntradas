@@ -2,24 +2,26 @@ package venta_entradas;
 
 import java.time.LocalDate;
 
+
 public class Entradas {
 	
 	private int valor;
 	private boolean estadoEntrada;
 	private LocalDate fechaEvento;
 	private String nomEvento;
+	private Asientos asiento = new Asientos();
 	
 	public Entradas() {
 		
 	}
 	
 	
-	public Entradas(int valor, boolean estadoEntrada, LocalDate fechaEvento, String nomEvento) {
-		super();
+	public Entradas(int valor, boolean estadoEntrada, LocalDate fechaEvento, String nomEvento, Asientos asiento) {
 		this.valor = valor;
 		this.estadoEntrada = estadoEntrada;
 		this.fechaEvento = fechaEvento;
 		this.nomEvento = nomEvento;
+		this.asiento = asiento;
 	}
 	
 	public int getValor() {
@@ -45,6 +47,16 @@ public class Entradas {
 	}
 	public void setNomEvento(String nomEvento) {
 		this.nomEvento = nomEvento;
+	}
+
+
+	public Asientos getAsiento() {
+		return asiento;
+	}
+
+
+	public void setAsiento(Asientos asiento) {
+		this.asiento = asiento;
 	}
 	
 
