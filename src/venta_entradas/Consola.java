@@ -29,7 +29,7 @@ public class Consola {
 
 		for (int i = 1; i <= 30; i++) {
 			System.out.println("Añadido asiento: "+i);
-			Asientos asiento = new Asientos(i);
+			Asientos asiento = new Asientos(i, true);
 			asientos.add(asiento);
 		}
 		for (Asientos asiento : asientos) {
@@ -73,7 +73,7 @@ public class Consola {
 	}
 	
 	private static int opcionMenu() {
-		System.out.println("SISTEMA ENTRADAS:\n"); // "\n" para saltarse una linea
+		System.out.println("SISTEMA ENTRADAS:\n");
 		System.out.println("1. COMPRAR TICKET");
 		System.out.println("2. VER VENTAS");
 		System.out.println("3. ENTRADAS DISPONIBLES");
@@ -106,7 +106,37 @@ public class Consola {
 	// COMPRAR TICKET
 ///////////////////////////////////////////////
 	private static void comprarTicket() {
-		System.out.println("No implementado aun");
+		
+		// CREACION DE CLIENTE
+		System.out.println("Ingrese nombre del cliente");
+		String nombreCliente = scanner.nextLine();
+		
+		System.out.println("Ingrese apellido del cliente");
+		String apellidoCliente = scanner.nextLine();
+		
+		System.out.println("Ingrese RUT del cliente");
+		String rutCliente = scanner.nextLine();
+		
+		Clientes cliente = new Clientes(rutCliente,nombreCliente,apellidoCliente);
+		clientes.add(cliente);
+		
+		// CREACION DE VENTA PARA EL CLIENTE
+		LocalDate fecha = LocalDate.now();
+
+		final String NOMBRE_EVENTO = "Pelicula";
+		final int VALOR_EVENTO = 500;
+		final LocalDate fechaEvento = LocalDate.of(2022, 5, 1);
+		boolean estadoEntrada = false;
+		
+		for (Asientos asiento : asientos) {
+			if (asiento.isEstado() == true) {
+				Entradas entrada = new Entradas(VALOR_EVENTO,estadoEntrada,fechaEvento,NOMBRE_EVENTO,asiento);
+				entradas.add(entrada);
+				break;
+			}
+		}
+		
+		
+		
 	}
-///////////////////////////////////////////////
 }
