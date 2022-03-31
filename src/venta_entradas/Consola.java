@@ -108,6 +108,7 @@ public class Consola {
 	private static void comprarTicket() {
 		
 		// CREACION DE CLIENTE
+		scanner.nextLine();
 		System.out.println("Ingrese nombre del cliente");
 		String nombreCliente = scanner.nextLine();
 		
@@ -130,13 +131,23 @@ public class Consola {
 		
 		for (Asientos asiento : asientos) {
 			if (asiento.isEstado() == true) {
+				asiento.setEstado(false);
 				Entradas entrada = new Entradas(VALOR_EVENTO,estadoEntrada,fechaEvento,NOMBRE_EVENTO,asiento);
 				entradas.add(entrada);
+				Ventas venta = new Ventas(fecha,entrada,cliente);
+				ventas.add(venta);
+				
+				// VERIFICADORES
+				System.out.println("Nombre del evento: "+ venta.getEntrada().getNomEvento());
+				System.out.println("Valor del evento: "+ venta.getEntrada().getValor());
+				System.out.println("Fecha del evento: "+ venta.getEntrada().getFechaEvento());
+				System.out.println("Nombre del cliente: "+venta.getCliente().getNombre()+" "+venta.getCliente().getApellido());
+				System.out.println("Numero de asiento: "+venta.getEntrada().getAsiento().getAsiento());
 				break;
 			}
 		}
 		
-		
+
 		
 	}
 }
