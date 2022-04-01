@@ -32,11 +32,6 @@ public class Consola {
 			Asientos asiento = new Asientos(i, true);
 			asientos.add(asiento);
 		}
-		for (Asientos asiento : asientos) {
-			Entradas entrada = new Entradas(1000, true, LocalDate.now(), "Peliculon", asiento);
-			System.out.println("Añadida entrada");
-			
-		}
 		
 	}
 
@@ -90,7 +85,12 @@ public class Consola {
 	//VER RECAUDACIONES
 ///////////////////////////////////////////////
 	private static void verRecaudaciones() {
-		System.out.println("No implementado aun");
+		int valorTotal = 0;
+		
+		for (Ventas venta : ventas) {
+			valorTotal += venta.getEntrada().getValor();
+		}
+		System.out.println("Recaudaciones: "+valorTotal);
 		
 	}
 ///////////////////////////////////////////////
@@ -100,7 +100,7 @@ public class Consola {
 	//VER ENTRADAS VENDIDAS
 ///////////////////////////////////////////////
 	private static void verEntradasVendidas() {
-		System.out.println("No implementado aun");		
+		System.out.println("No implementado aun");
 	}
 ///////////////////////////////////////////////
 	// COMPRAR TICKET
