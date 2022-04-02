@@ -1,15 +1,9 @@
 package venta_entradas;
 
 public class Asientos {
-
+	
 	private int asiento;
 	private boolean estado;
-
-	public Asientos() {
-		
-	}
-	
-
 
 	public Asientos(int asiento, boolean estado) {
 		this.asiento = asiento;

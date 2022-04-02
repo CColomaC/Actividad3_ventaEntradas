@@ -28,7 +28,7 @@ public class Consola {
 	private static void inicializar() {
 
 		for (int i = 1; i <= 30; i++) {
-			System.out.println("Añadido asiento: "+i);
+			System.out.println("Aï¿½adido asiento: "+i);
 			Asientos asiento = new Asientos(i, true);
 			asientos.add(asiento);
 		}
@@ -95,7 +95,14 @@ public class Consola {
 	}
 ///////////////////////////////////////////////
 	private static void verEntradasDisponibles() {
-		System.out.println("No implementado aun");		
+		int entradasDisponibles = 30;
+		for (Asientos asiento : asientos) {
+			if(asiento.isEstado() == false){
+			entradasDisponibles--;
+			}
+		}
+		System.out.println("Entradas disponibles:"+ entradasDisponibles);
+		
 	}
 	//VER ENTRADAS VENDIDAS
 ///////////////////////////////////////////////

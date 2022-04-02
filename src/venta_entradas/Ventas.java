@@ -2,13 +2,13 @@ package venta_entradas;
 
 import java.time.LocalDate;
 
+
 public class Ventas {
 	
 	private LocalDate fechaVenta;
 	private Entradas entrada = new Entradas();
 	private Clientes cliente = new Clientes();
 	
-
 
 	public Ventas(LocalDate fechaVenta, Entradas entrada, Clientes cliente) {
 		this.fechaVenta = fechaVenta;
@@ -44,6 +44,4 @@ public class Ventas {
 		this.cliente = cliente;
 	}
 	
-	
-
-}
+} 

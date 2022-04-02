@@ -2,7 +2,6 @@ package venta_entradas;
 
 import java.time.LocalDate;
 
-
 public class Entradas {
 	
 	private int valor;
@@ -48,7 +47,6 @@ public class Entradas {
 	public void setNomEvento(String nomEvento) {
 		this.nomEvento = nomEvento;
 	}
-
 
 	public Asientos getAsiento() {
 		return asiento;
