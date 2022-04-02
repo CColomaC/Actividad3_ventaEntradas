@@ -11,6 +11,10 @@ public class Asientos {
 	}
 
 
+	public Asientos() {
+	}
+
+
 	public int getAsiento() {
 		return asiento;
 	}
