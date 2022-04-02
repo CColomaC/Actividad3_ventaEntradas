@@ -7,4 +7,4 @@ Genere el código de una aplicacion  de consola para venta de entradas a un even
 * Rafael Castillo
 * Andres Vargas
 * Christian Coloma
-* Michael Philip
+* Michael Geiser
