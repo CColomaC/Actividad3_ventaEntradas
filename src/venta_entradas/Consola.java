@@ -17,6 +17,7 @@ public class Consola {
 		public final static int OPCION_MENU_ENTRADAS_DISPONIBLES = 3;
 		public final static int OPCION_MENU_VER_RECAUDACIONES = 4;
 		public final static int OPCION_MENU_SALIR = 0;
+<<<<<<< HEAD
 	
 
 	public static void main(String[] args) {
@@ -33,8 +34,16 @@ public class Consola {
 			asientos.add(asiento);
 		}
 
+=======
+		
+	public static void main(String[] args) {
+		inicializar();
+		menu();
+>>>>>>> e1b4d526f5ef139fe5dcc3ca96ed649fc60ddeff
 	}
+	private static void inicializar() {
 
+<<<<<<< HEAD
 	//MENU
 //////////////////////////////////////////////
 	private static void menu() {
@@ -153,4 +162,31 @@ public class Consola {
 		
 	}
 
+=======
+		for (int i = 1; i <= 30; i++) {
+			System.out.println("Añadido asiento: "+i);
+			Asientos asiento = new Asientos(i);
+			asientos.add(asiento);
+		}
+		for (Asientos asiento : asientos) {
+			Entradas entrada = new Entradas(1000, true, LocalDate.now(), "Peliculon", asiento);
+			System.out.println("Añadida entrada");
+			
+		}
+		private static int menu() {
+			System.out.println("\nMENU COMPRA DE ENTRADAS\n_______________________\n");
+			System.out.println("1. Comprar Ticket");
+			System.out.println("2. Ver Ventas");
+			System.out.println("3. Ver Entradas Disponibles");
+			System.out.println("4. Ver Recaudaciones");
+			System.out.println("0. Salir");
+	
+			
+			System.out.println("\nPor favor digite la opción deseada:");
+			Scanner scanner = new Scanner( System.in );
+			int opcionSeleccionada = scanner.nextInt();
+			return opcionSeleccionada;
+			
+		}
+>>>>>>> e1b4d526f5ef139fe5dcc3ca96ed649fc60ddeff
 }
